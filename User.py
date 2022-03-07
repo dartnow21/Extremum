@@ -1,4 +1,6 @@
 from sympy import *
+from Extremum.SearchExtremes import *
+from Extremum.MethodLagranja import *
 
 
 class User:
