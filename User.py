@@ -27,8 +27,8 @@ class User:
                 y_from = float(input())
                 print("Введите точку до. Пример: 10")
                 y_to = float(input())
-            functions = SearchExtremes()
-            functions.find(x, y, f, x_from, x_to, y_from, y_to)
+            functions1 = SearchExtremes()
+            functions1.find(x, y, f, x_from, x_to, y_from, y_to)
         elif user_answer == 2:
             x, y = 'x', 'y'
             print("Введите функцию f(x, y). Например:  4*y**2 + x**2")
@@ -62,8 +62,8 @@ class User:
                 y_from = float(input())
                 print("Введите точку до. Пример: 10")
                 y_to = float(input())
-            functions = MethodLagranja()
-            functions.find(x, y, x_y, f, f_x_y, x_from, x_to, y_from, y_to, left_x_y)
+            functions1 = MethodLagranja()
+            functions1.find(x, y, x_y, f, f_x_y, x_from, x_to, y_from, y_to, left_x_y)
 
         else:
             print("Извините, такой метод не найден.")
