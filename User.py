@@ -1,10 +1,11 @@
 from sympy import *
+
+
 class User:
     def userAnswer(self):
         print("Каким методом для нахождения экстремумов хотите воспользоваться? 1 - Обычный способ / 2 - Метод Лагранжа")
         user_answer = int(input())
         if user_answer == 1:
-            from searchExtremes import SearchExtremes
             x, y = symbols('x y')
             print("Введите функцию f(x, y). Например:  x**2 + y ** 2 + 1")
             f = input()
@@ -29,7 +30,6 @@ class User:
             functions = SearchExtremes()
             functions.find(x, y, f, x_from, x_to, y_from, y_to)
         elif user_answer == 2:
-            from MethodLagranja import MethodLagranja
             x, y = 'x', 'y'
             print("Введите функцию f(x, y). Например:  4*y**2 + x**2")
 
