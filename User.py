@@ -68,6 +68,3 @@ class User:
         else:
             print("Извините, такой метод не найден.")
 
-
-functions = User()
-functions.userAnswer()
