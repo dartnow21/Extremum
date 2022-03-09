@@ -3,6 +3,8 @@
 
 Подробнее узнать о задании можно по ссылке: https://github.com/dartnow21/Extremum/blob/main/TZ_poisk_extremumov.docx
 
+Мы вели проект в Jira, где представлены наши основные задачи: https://twoteam.atlassian.net/jira/software/projects/EX/boards/1
+
 ## Демонстрация возможностей программы
 
 Пример работы программы представлен в виде ноутбука в JupyterNotebook и скачать файл можно по ссылке: https://github.com/dartnow21/Extremum/blob/main/program_test.ipynb
