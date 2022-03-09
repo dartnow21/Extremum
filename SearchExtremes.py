@@ -17,7 +17,7 @@ class SearchExtremes:
         # Считаем первые производные по х и у и приравниваем их к нулю чтобы найти эти х и у
         values_diff = solve([func.diff(x), func.diff(y)], dict=True)  # делаем это все словарем (dict=True)
         v_d = []
-
+        print(values_diff)
         # проверяем есть ли пара в словаре для икса и игрика и при ее отсутствии добавляем
         for i in range(len(values_diff)):
             if (len(values_diff[i]) == 1) and (value == 0 for value in values_diff[i].values()):
@@ -30,12 +30,13 @@ class SearchExtremes:
             for key, value in values_diff[i].items():
                 v_d_in.append(value)
 
-            if (type(v_d_in[0]) != int) and (type(v_d_in[1]) != int):
-                if ((v_d_in[0]).has(I) is False) and ((v_d_in[1]).has(I) is False):  # проверяем на налич комплекс чисел
+            if (type(v_d_in[0]) != int) or (type(v_d_in[1]) != int):
+                if ((v_d_in[0]).has(I) is False) or ((v_d_in[1]).has(I) is False):  # проверяем на налич комплекс чисел
                     v_d_in[0] = float(v_d_in[0])  # Переводим во float для удобства
                     v_d_in[1] = float(v_d_in[1])
                     v_d.append(v_d_in)
         values_diff = v_d  # список точек, где на первом месте х, на втором у
+
 
         # Создаем гессиан
         ges = np.array([[func.diff(x).diff(x), func.diff(x).diff(y)],
@@ -56,8 +57,10 @@ class SearchExtremes:
                 a = func.diff(x).diff(x).subs([(x, values_diff[i][0]), (y, values_diff[i][1])])
             if (type(ges[0][1]) == sympy.core.numbers.Integer) or (type(ges[0][1]) == sympy.core.numbers.Zero):
                 b = ges[0][1]
+
             else:
                 b = func.diff(x).diff(y).subs([(x, values_diff[i][0]), (y, values_diff[i][1])])
+
             if (type(ges[1][1]) == sympy.core.numbers.Integer) or (type(ges[1][1]) == sympy.core.numbers.Zero):
                 c = ges[1][1]
             else:
@@ -85,30 +88,30 @@ class SearchExtremes:
 
         # если нет локального экстремума выводим запись о его отсутствии, если есть выводим точки
         # аналогично с точкой доп исследования и с седловой
-        #if not points_max:
-        #    print("Локального экстремума (максимума) нет")
-        #else:
-        #    print("Локальный экстремум (максимум)")
-        #    for i in range(len(points_max)):
-        #        print(points_max[i])
-        #if not points_min:
-        #    print("Локального экстремума (минимума) нет")
-        #else:
-        #    print("Локальный экстремум (минимум)")
-        #    for i in range(len(points_min)):
-        #        print(points_min[i])
-        #if not points_not_defined:
-        #    print("Дополнительное исследование не требуется")
-        #else:
-        #    print("Требуется дополнительное исследование")
-        #    for i in range(len(points_not_defined)):
-        #        print(points_not_defined[i])
-        #if not saddle_point:
-        #    print("Седловой точки нет")
-        #else:
-        #    print("Седловая точка")
-        #    for i in range(len(saddle_point)):
-        #        print(saddle_point[i])
+        if not points_max:
+            print("Локального экстремума (максимума) нет")
+        else:
+            print("Локальный экстремум (максимум)")
+            for i in range(len(points_max)):
+                print(points_max[i])
+        if not points_min:
+            print("Локального экстремума (минимума) нет")
+        else:
+            print("Локальный экстремум (минимум)")
+            for i in range(len(points_min)):
+                print(points_min[i])
+        if not points_not_defined:
+            print("Дополнительное исследование не требуется")
+        else:
+            print("Требуется дополнительное исследование")
+            for i in range(len(points_not_defined)):
+                print(points_not_defined[i])
+        if not saddle_point:
+            print("Седловой точки нет")
+        else:
+            print("Седловая точка")
+            for i in range(len(saddle_point)):
+                print(saddle_point[i])
 
         # Для 3д графика
         # Построение списков точек минимума для графика
