@@ -9,7 +9,7 @@
 
 Пример работы программы представлен в виде ноутбука в JupyterNotebook и скачать файл можно по ссылке: https://github.com/dartnow21/Extremum/blob/main/program_test.ipynb
 
-Так же пример программы представлен в GoogleColab (нет возможности крутить графики): https://colab.research.google.com/drive/1NM4_aJ_kJOKLpaeCDl-rs4fWRIwC0gLj?usp=sharing
+Так же пример программы представлен в GoogleColab (нет возможности крутить графики): https://colab.research.google.com/drive/1NM4_aJ_kJOKLpaeCDl-rs4fWRIwC0gLj?usp=sharing 
 
 Информация о там какие алгоритмы мы использовали: https://github.com/dartnow21/Extremum/blob/main/Teoria_TZ-1.docx
 
