@@ -7,7 +7,7 @@
 
 Пример работы программы представлен в виде ноутбука в JupyterNotebook и скачать файл можно по ссылке: https://github.com/dartnow21/Extremum/blob/main/program_test.ipynb
 
-Информация о там какие алгоритмы мы использовали: 
+Информация о там какие алгоритмы мы использовали: https://github.com/dartnow21/Extremum/blob/main/Teoria_TZ-1.docx
 
 Пример работы программы так же представлен на скрине: 
 
