@@ -88,30 +88,30 @@ class SearchExtremes:
 
         # если нет локального экстремума выводим запись о его отсутствии, если есть выводим точки
         # аналогично с точкой доп исследования и с седловой
-        if not points_max:
-            print("Локального экстремума (максимума) нет")
-        else:
-            print("Локальный экстремум (максимум)")
-            for i in range(len(points_max)):
-                print(points_max[i])
-        if not points_min:
-            print("Локального экстремума (минимума) нет")
-        else:
-            print("Локальный экстремум (минимум)")
-            for i in range(len(points_min)):
-                print(points_min[i])
-        if not points_not_defined:
-            print("Дополнительное исследование не требуется")
-        else:
-            print("Требуется дополнительное исследование")
-            for i in range(len(points_not_defined)):
-                print(points_not_defined[i])
-        if not saddle_point:
-            print("Седловой точки нет")
-        else:
-            print("Седловая точка")
-            for i in range(len(saddle_point)):
-                print(saddle_point[i])
+        #if not points_max:
+        #    print("Локального экстремума (максимума) нет")
+        #else:
+        #    print("Локальный экстремум (максимум)")
+        #    for i in range(len(points_max)):
+        #        print(points_max[i])
+        #if not points_min:
+        #    print("Локального экстремума (минимума) нет")
+        #else:
+        #    print("Локальный экстремум (минимум)")
+        #    for i in range(len(points_min)):
+        #        print(points_min[i])
+        #if not points_not_defined:
+        #    print("Дополнительное исследование не требуется")
+        #else:
+        #    print("Требуется дополнительное исследование")
+        #    for i in range(len(points_not_defined)):
+        #        print(points_not_defined[i])
+        #if not saddle_point:
+        #    print("Седловой точки нет")
+        #else:
+        #    print("Седловая точка")
+        #    for i in range(len(saddle_point)):
+        #        print(saddle_point[i])
 
         # Для 3д графика
         # Построение списков точек минимума для графика
