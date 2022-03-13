@@ -18,6 +18,8 @@
 
 <img width="991" alt="image" src="https://user-images.githubusercontent.com/83269930/157073221-86840024-a85b-48fa-92cb-5ddca27395f5.png">
 
+Описание функций используемых в нашей программе:
+
 <img width="579" alt="image" src="https://user-images.githubusercontent.com/83269930/158068607-a695ff13-da34-4970-be68-f9cea7f9b99e.png">
 
 <img width="684" alt="image" src="https://user-images.githubusercontent.com/83269930/158068623-d6da0e7f-9df8-4f1e-b313-536702b4a56e.png">
