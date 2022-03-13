@@ -3,21 +3,44 @@ import sympy
 from sympy import *
 import numpy as np
 import matplotlib.pyplot as plt
-import re
-from matplotlib import cm
-from mpl_toolkits.axes_grid1 import make_axes_locatable
-
+# import re
+# from matplotlib import cm
+# from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 
 class SearchExtremes:
-    def find(self, x, y, z, x_from, x_to, y_from, y_to):
+    def find(self, x: str, y: str, z: str, x_from: float, x_to: float, y_from: float, y_to: float):
+        """
+        Функция находит экстермумы, седловые точки и точки дальнейшего исследования и строит 3Д график
+
+        Parameters
+        ===========
+        :param x: str
+            символ х
+        :param y: str
+            символ у
+        :param z: str
+            строковая функция
+        :param x_from: float
+            интервал "от" по х
+        :param x_to: float
+            интервал "до" по х
+        :param y_from: float
+            интервал "от" по у
+        :param y_to: float
+            интервал "до" по у
+
+        Returns
+        ===========
+        3Д график с отмеченными точками экстремумов
+        """
 
         # Преобразуем произвольное выражение в тип, который можно использовать внутри SymPy
         func = sympify(z)
         # Считаем первые производные по х и у и приравниваем их к нулю чтобы найти эти х и у
         values_diff = solve([func.diff(x), func.diff(y)], dict=True)  # делаем это все словарем (dict=True)
         v_d = []
-        
+
         # проверяем есть ли пара в словаре для икса и игрика и при ее отсутствии добавляем
         for i in range(len(values_diff)):
             if (len(values_diff[i]) == 1) and (value == 0 for value in values_diff[i].values()):
@@ -30,13 +53,12 @@ class SearchExtremes:
             for key, value in values_diff[i].items():
                 v_d_in.append(value)
 
-            if (type(v_d_in[0]) != int) or (type(v_d_in[1]) != int):
-                if ((v_d_in[0]).has(I) is False) or ((v_d_in[1]).has(I) is False):  # проверяем на налич комплекс чисел
+            if (type(v_d_in[0]) != int) and (type(v_d_in[1]) != int):
+                if ((v_d_in[0]).has(I) is False) and ((v_d_in[1]).has(I) is False):  # проверяем на налич комплекс чисел
                     v_d_in[0] = float(v_d_in[0])  # Переводим во float для удобства
                     v_d_in[1] = float(v_d_in[1])
                     v_d.append(v_d_in)
         values_diff = v_d  # список точек, где на первом месте х, на втором у
-
 
         # Создаем гессиан
         ges = np.array([[func.diff(x).diff(x), func.diff(x).diff(y)],
@@ -57,10 +79,8 @@ class SearchExtremes:
                 a = func.diff(x).diff(x).subs([(x, values_diff[i][0]), (y, values_diff[i][1])])
             if (type(ges[0][1]) == sympy.core.numbers.Integer) or (type(ges[0][1]) == sympy.core.numbers.Zero):
                 b = ges[0][1]
-
             else:
                 b = func.diff(x).diff(y).subs([(x, values_diff[i][0]), (y, values_diff[i][1])])
-
             if (type(ges[1][1]) == sympy.core.numbers.Integer) or (type(ges[1][1]) == sympy.core.numbers.Zero):
                 c = ges[1][1]
             else:
@@ -246,4 +266,3 @@ class SearchExtremes:
             ax.legend(labelcolor='black')
 
         plt.show()
-

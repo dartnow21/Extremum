@@ -3,10 +3,11 @@ import sympy
 from sympy import *
 import numpy as np
 import matplotlib.pyplot as plt
-
 import re
+
+
 class MethodLagranja:
-        def find(self, x: str, y: str, x_y, f, z, x_from, x_to, y_from, y_to, left_x_y):
+    def find(self, x: str, y: str, x_y, f, z, x_from, x_to, y_from, y_to, left_x_y):
         """
 
         Функция находит экстермумы, седловые точки и точки дальнейшего исследования
